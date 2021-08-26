@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class listMin {
     public static void main (String[] args){
 
-        int[] values = {3,5,6,7,1,0,9};
+        int[] values = {10,8,7,5,19,1};
         final long startTime = System.nanoTime();
 /*        for (int i = 0; i < values.length; i++)
         {
@@ -80,17 +80,15 @@ public class listMin {
         int maxIndex = 0;
         int minIndex = 0;
 
-        for (int i = 1; i < length; ++i)                               // 1+n-1
+        for (int i = 1; i < length; ++i) // 1+n-1+n =2N
         {
-            if (val[i] > max_val){                                    //n-1
-                System.out.println(val[i] +" større enn " + max_val ) ;
-                max_val = val[i];
+            if (val[i] > max_val){ //n-2
+                max_val = val[i]; //2log(n)
                 maxIndex = i;
 
             }
-            else if (val[i] < min_val){                              //n-1-x
-                System.out.println(val[i] +" mindre enn " + min_val ) ;
-                min_val = val[i];
+            else if (val[i] < min_val){  //n-2
+                min_val = val[i];  //2log(n)
                 minIndex = i;
 
             }
